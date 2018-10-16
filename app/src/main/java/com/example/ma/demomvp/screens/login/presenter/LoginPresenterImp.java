@@ -1,6 +1,6 @@
-package com.example.ma.demomvp.screen.login.presenter;
+package com.example.ma.demomvp.screens.login.presenter;
 
-import com.example.ma.demomvp.screen.login.view.LoginView;
+import com.example.ma.demomvp.screens.login.view.LoginView;
 
 public class LoginPresenterImp implements LoginPresenter {
     private LoginView mLoginView;

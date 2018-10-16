@@ -1,4 +1,4 @@
-package com.example.ma.demomvp.screen.category.View;
+package com.example.ma.demomvp.screens.categories;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -10,16 +10,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.ma.demomvp.R;
-import com.example.ma.demomvp.data.model.CategoryImage;
+import com.example.ma.demomvp.data.model.Category;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatViewHolder>{
     private Context mContext;
-    private ArrayList<CategoryImage> mCategories;
+    private ArrayList<Category> mCategories;
 
-    public CategoryAdapter(Context mContext, ArrayList<CategoryImage> mCategories) {
+    public CategoryAdapter(Context mContext, ArrayList<Category> mCategories) {
         this.mContext = mContext;
         this.mCategories = mCategories;
     }
@@ -33,11 +33,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatVie
 
     @Override
     public void onBindViewHolder(@NonNull CatViewHolder catViewHolder, int i) {
-        CategoryImage category = mCategories.get(i);
-        Picasso.get().load(category.getCatPathImage())
+        Category category = mCategories.get(i);
+        Picasso.get().load(category.getmCatPathImage())
                 .resize(200,180)
                 .into(catViewHolder.mCatImage);
-        catViewHolder.mCatName.setText(category.getCatName());
+        catViewHolder.mCatName.setText(category.getmCatName());
     }
 
     @Override

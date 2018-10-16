@@ -1,4 +1,4 @@
-package com.example.ma.demomvp.screen.login.view;
+package com.example.ma.demomvp.screens.login.view;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.example.ma.demomvp.R;
-import com.example.ma.demomvp.screen.login.presenter.LoginPresenterImp;
+import com.example.ma.demomvp.screens.login.presenter.LoginPresenterImp;
 
 
 public class LoginActivity extends AppCompatActivity implements LoginView,View.OnClickListener {

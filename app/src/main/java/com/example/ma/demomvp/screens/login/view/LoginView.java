@@ -1,4 +1,4 @@
-package com.example.ma.demomvp.screen.login.view;
+package com.example.ma.demomvp.screens.login.view;
 
 public interface LoginView {
     void showProsesBar();

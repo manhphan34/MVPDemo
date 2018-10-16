@@ -1,10 +1,10 @@
-package com.example.ma.demomvp.data.source.Category;
+package com.example.ma.demomvp.data.source.Categories;
 
 import android.os.AsyncTask;
 
-import com.example.ma.demomvp.data.model.CategoryImage;
+import com.example.ma.demomvp.data.model.Category;
 import com.example.ma.demomvp.data.source.CallBack;
-import com.example.ma.demomvp.myclass.MyKey;
+import com.example.ma.demomvp.screens.categories.CatJSONKey;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -17,13 +17,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-public class FetchDataFromApi {
+public class CategoryApiData {
     public static String getCategoryJson(String path){
         String json = "";
         try {
             URL url = new URL(path);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
-            httpURLConnection.setRequestMethod("GET");
+            httpURLConnection.setRequestMethod(CatJSONKey.METHOD_GET);
             httpURLConnection.connect();
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
             String str;
@@ -39,32 +39,32 @@ public class FetchDataFromApi {
 
         return json;
     }
-    public static ArrayList<CategoryImage> getCategoryData(String json){
-        ArrayList<CategoryImage> categoryImages = new ArrayList<>();
+    public static ArrayList<Category> getCategoryData(String json){
+        ArrayList<Category> categories = new ArrayList<>();
         try {
-            JSONArray cats = new JSONArray(new JSONObject(json).getString(MyKey.HD_WALLPAPER));
+            JSONArray cats = new JSONArray(new JSONObject(json).getString(CatJSONKey.HD_WALLPAPER));
             for(int i = 0 ;i <cats.length();i++){
-                categoryImages.add(new CategoryImage(cats.getJSONObject(i)));
+                categories.add(new Category(cats.getJSONObject(i)));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        return categoryImages;
+        return categories;
     }
     public static class ContentCategory extends AsyncTask<String,Void,String>{
-        private CallBack<ArrayList<CategoryImage>> mCallback;
-        public ContentCategory(CallBack<ArrayList<CategoryImage>> callback){
+        private CallBack<ArrayList<Category>> mCallback;
+        public ContentCategory(CallBack<ArrayList<Category>> callback){
             mCallback = callback;
         }
         @Override
         protected String doInBackground(String... strings) {
-            return FetchDataFromApi.getCategoryJson(strings[0]);
+            return CategoryApiData.getCategoryJson(strings[0]);
         }
 
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-            mCallback.getDataSuccess(FetchDataFromApi.getCategoryData(s));
+            mCallback.getDataSuccess(CategoryApiData.getCategoryData(s));
         }
     }
 }
