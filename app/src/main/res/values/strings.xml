@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">DemoMVP</string>
+    <string name="user_name_invalid">User name invalid</string>
+    <string name="pass_word_invalid">Pass word invalid</string>
 </resources>
