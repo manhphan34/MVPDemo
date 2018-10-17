@@ -5,4 +5,6 @@
     <string name="login_user_name_hint">User name</string>
     <string name="login_pass_word_hint">Pass word</string>
     <string name="title_login_button">Login</string>
+    <string name="error_user_load_data">Load data error</string>
+    <string name="description_image">This is description image</string>
 </resources>
