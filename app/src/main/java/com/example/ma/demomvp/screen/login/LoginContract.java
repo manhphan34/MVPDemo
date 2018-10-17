@@ -1,7 +1,7 @@
 package com.example.ma.demomvp.screen.login;
 
 public interface LoginContract {
-    interface LoginView {
+    interface View {
         void showProsesBar();
 
         void hideProsesBar();
@@ -13,7 +13,7 @@ public interface LoginContract {
         void navigateCategory();
     }
 
-    interface LoginPresenter {
+    interface Presenter {
         void authenticateLogin(String userName, String passWord);
 
         boolean isValidateUser(String userName, String passWord);

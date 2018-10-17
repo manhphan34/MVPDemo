@@ -1,10 +1,10 @@
 package com.example.ma.demomvp.screen.login;
 
 
-public class LoginPresenterImp implements LoginContract.LoginPresenter {
-    private LoginContract.LoginView mLoginView;
+public class LoginPresenter implements LoginContract.Presenter {
+    private LoginContract.View mLoginView;
 
-    public LoginPresenterImp(LoginContract.LoginView loginView) {
+    public LoginPresenter(LoginContract.View loginView) {
         mLoginView = loginView;
     }
 

@@ -12,10 +12,10 @@ import com.example.ma.demomvp.R;
 import com.example.ma.demomvp.screen.categories.CategoryActivity;
 
 
-public class LoginActivity extends AppCompatActivity implements LoginContract.LoginView, View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements LoginContract.View, View.OnClickListener {
     private EditText mEditUserName, mEditPassWord;
     private ProgressBar mProgressBar;
-    private LoginContract.LoginPresenter mPresenter;
+    private LoginContract.Presenter mPresenter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity implements LoginContract.Lo
     @Override
     public void onClick(View v) {
         showProsesBar();
-        mPresenter = new LoginPresenterImp(this);
+        mPresenter = new LoginPresenter(this);
         mPresenter.authenticateLogin(mEditUserName.getText().toString(), mEditPassWord.getText().toString());
     }
 

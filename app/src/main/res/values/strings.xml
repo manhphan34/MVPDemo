@@ -2,4 +2,7 @@
     <string name="app_name">DemoMVP</string>
     <string name="error_user_name_invalid">User name invalid</string>
     <string name="error_pass_word_invalid">Pass word invalid</string>
+    <string name="login_user_name_hint">User name</string>
+    <string name="login_pass_word_hint">Pass word</string>
+    <string name="title_logind_button">Login</string>
 </resources>
