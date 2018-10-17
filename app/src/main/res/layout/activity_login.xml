@@ -3,16 +3,76 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".LoginActivity">
+    android:layout_height="match_parent">
 
-    <TextView
+    <EditText
+        android:id="@+id/edit_user_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:autofillHints="@string/login_user_name_hint"
+        android:hint="@string/login_user_name_hint"
+        android:inputType="textPersonName"
+        android:text="@string/login_user_name_hint"
+        app:layout_constraintBottom_toTopOf="@+id/edit_pass_word"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_right"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_left"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:ignore="UnusedAttribute" />
+
+    <EditText
+        android:id="@+id/edit_pass_word"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:autofillHints="@string/login_pass_word_hint"
+        android:hint="@string/login_pass_word_hint"
+        android:inputType="text"
+        android:maxLines="@integer/number_1"
+        android:text="@string/login_pass_word_hint"
+        app:layout_constraintBottom_toTopOf="@+id/button_login"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_right"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_left"
+        app:layout_constraintTop_toBottomOf="@+id/edit_user_name"
+        tools:ignore="UnusedAttribute" />
+
+    <Button
+        android:id="@+id/button_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:maxLines="@integer/number_1"
+        android:text="@string/title_login_button"
+        app:layout_constraintBottom_toTopOf="@+id/progress_main"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_right"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_left"
+        app:layout_constraintTop_toBottomOf="@+id/edit_pass_word" />
 
+    <ProgressBar
+        android:id="@+id/progress_main"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/guide_line_right"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_left"
+        app:layout_constraintTop_toBottomOf="@+id/button_login" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_line_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guide_line_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
 </android.support.constraint.ConstraintLayout>
