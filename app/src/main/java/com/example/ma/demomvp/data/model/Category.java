@@ -17,7 +17,8 @@ public class Category {
         this.mCatPathImage = mCatPathImage;
     }
 
-    public Category(JSONObject jsonObject){
+
+    public Category(JSONObject jsonObject) {
         try {
             this.mCatId = jsonObject.getInt(CatJSONKey.CAT_ID);
             this.mCatName = jsonObject.getString(CatJSONKey.CAT_NAME);

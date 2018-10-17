@@ -8,9 +8,11 @@ import java.util.ArrayList;
 
 public class CategoryPreImp implements CategoryContract.CategoryPresenter {
     private CategoryContract.CategoryView mCategory;
-    public CategoryPreImp(CategoryContract.CategoryView categoryView){
+
+    public CategoryPreImp(CategoryContract.CategoryView categoryView) {
         this.mCategory = categoryView;
     }
+
     @Override
     public void getCategoryList(CategoryRepository categoryRepository) {
         categoryRepository.getCategory(new CallBack<ArrayList<Category>>() {

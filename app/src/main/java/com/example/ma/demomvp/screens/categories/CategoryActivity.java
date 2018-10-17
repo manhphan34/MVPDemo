@@ -19,6 +19,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryContr
     private ArrayList<Category> mCategories;
     private RecyclerView.LayoutManager mLayoutManager;
     private CategoryAdapter mAdapter;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,20 +27,23 @@ public class CategoryActivity extends AppCompatActivity implements CategoryContr
         initViews();
         loadData();
     }
+
     @Override
     public void showCategory(ArrayList<Category> data) {
         mCategories = data;
         mAdapter.notifyDataSetChanged();
     }
-    private void initViews(){
-        mRecCategory =findViewById(R.id.rec_category_image);
+
+    private void initViews() {
+        mRecCategory = findViewById(R.id.rec_category_image);
         mCategories = new ArrayList<>();
-        mLayoutManager = new GridLayoutManager(this,2);
+        mLayoutManager = new GridLayoutManager(this, 2);
         mRecCategory.setLayoutManager(mLayoutManager);
         mAdapter = new CategoryAdapter(this, mCategories);
         mRecCategory.setAdapter(mAdapter);
     }
-    private void loadData(){
+
+    private void loadData() {
         mCatPresenter = new CategoryPreImp(this);
         mCatPresenter.getCategoryList(CategoryRepository.getInstance());
     }

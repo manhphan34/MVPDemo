@@ -6,10 +6,11 @@ import com.example.ma.demomvp.data.repositories.CategoryRepository;
 import java.util.ArrayList;
 
 public interface CategoryContract {
-    interface CategoryView{
-        void showCategory(ArrayList<Category> data) ;
+    interface CategoryView {
+        void showCategory(ArrayList<Category> data);
     }
-    interface CategoryPresenter{
+
+    interface CategoryPresenter {
         void getCategoryList(CategoryRepository categoryRepository);
     }
 }

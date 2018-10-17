@@ -14,7 +14,7 @@ import com.example.ma.demomvp.data.model.Category;
 
 import java.util.ArrayList;
 
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatViewHolder>{
+public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatViewHolder> {
     private Context mContext;
     private ArrayList<Category> mCategories;
 
@@ -26,7 +26,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatVie
     @NonNull
     @Override
     public CatViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.item_category,viewGroup,false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_category, viewGroup, false);
         return new CatViewHolder(view);
     }
 
@@ -34,7 +34,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatVie
     public void onBindViewHolder(@NonNull CatViewHolder catViewHolder, int i) {
         Category category = mCategories.get(i);
         Picasso.get().load(category.getmCatPathImage())
-                .resize(200,180)
+                .resize(200, 180)
                 .into(catViewHolder.mCatImage);
         catViewHolder.mCatName.setText(category.getmCatName());
     }
@@ -44,14 +44,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CatVie
         return mCategories.size();
     }
 
-    public class CatViewHolder extends RecyclerView.ViewHolder{
+    public class CatViewHolder extends RecyclerView.ViewHolder {
         private ImageView mCatImage;
         private TextView mCatName;
         private View mView;
+
         public CatViewHolder(@NonNull View itemView) {
             super(itemView);
             mView = itemView;
-            mCatImage =  mView.findViewById(R.id.image_view_category);
+            mCatImage = mView.findViewById(R.id.image_view_category);
             mCatName = mView.findViewById(R.id.text_view_category);
         }
     }

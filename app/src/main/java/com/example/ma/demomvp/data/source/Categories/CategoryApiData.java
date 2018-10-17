@@ -18,7 +18,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 public class CategoryApiData {
-    public static String getCategoryJson(String path){
+    public static String getCategoryJson(String path) {
         String json = "";
         try {
             URL url = new URL(path);
@@ -28,7 +28,7 @@ public class CategoryApiData {
             BufferedReader in = new BufferedReader(new InputStreamReader(url.openStream()));
             String str;
             while ((str = in.readLine()) != null) {
-                    json = json.concat(str.concat("\n"));
+                json = json.concat(str.concat("\n"));
             }
             in.close();
             httpURLConnection.disconnect();
@@ -39,32 +39,17 @@ public class CategoryApiData {
 
         return json;
     }
-    public static ArrayList<Category> getCategoryData(String json){
+
+    public static ArrayList<Category> getCategoryData(String json) {
         ArrayList<Category> categories = new ArrayList<>();
         try {
             JSONArray cats = new JSONArray(new JSONObject(json).getString(CatJSONKey.HD_WALLPAPER));
-            for(int i = 0 ;i <cats.length();i++){
+            for (int i = 0; i < cats.length(); i++) {
                 categories.add(new Category(cats.getJSONObject(i)));
             }
         } catch (JSONException e) {
             e.printStackTrace();
         }
         return categories;
-    }
-    public static class ContentCategory extends AsyncTask<String,Void,String>{
-        private CallBack<ArrayList<Category>> mCallback;
-        public ContentCategory(CallBack<ArrayList<Category>> callback){
-            mCallback = callback;
-        }
-        @Override
-        protected String doInBackground(String... strings) {
-            return CategoryApiData.getCategoryJson(strings[0]);
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            mCallback.getDataSuccess(CategoryApiData.getCategoryData(s));
-        }
     }
 }
