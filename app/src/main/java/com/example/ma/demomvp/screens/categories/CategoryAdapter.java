@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import com.example.ma.demomvp.R;
 import com.example.ma.demomvp.data.model.Category;
-import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 

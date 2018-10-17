@@ -3,7 +3,7 @@ package com.example.ma.demomvp.data.repositories;
 import com.example.ma.demomvp.data.model.Category;
 import com.example.ma.demomvp.data.source.CallBack;
 import com.example.ma.demomvp.data.source.Categories.CategoryApiData;
-import com.example.ma.demomvp.data.source.Categories.RemoteDataSource;
+import com.example.ma.demomvp.data.source.RemoteDataSource;
 import com.example.ma.demomvp.screens.categories.CatJSONKey;
 
 import java.util.ArrayList;

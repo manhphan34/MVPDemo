@@ -15,7 +15,7 @@ import java.util.ArrayList;
 
 public class CategoryActivity extends AppCompatActivity implements CategoryContract.CategoryView {
     private RecyclerView mRecCategory;
-    private CategoryPreImp mCatPresenter;
+    private CategoryContract.CategoryPresenter mCatPresenter;
     private ArrayList<Category> mCategories;
     private RecyclerView.LayoutManager mLayoutManager;
     private CategoryAdapter mAdapter;
@@ -33,7 +33,6 @@ public class CategoryActivity extends AppCompatActivity implements CategoryContr
     }
     private void initViews(){
         mRecCategory =findViewById(R.id.rec_category_image);
-        mCatPresenter = new CategoryPreImp(this);
         mCategories = new ArrayList<>();
         mLayoutManager = new GridLayoutManager(this,2);
         mRecCategory.setLayoutManager(mLayoutManager);
@@ -41,6 +40,7 @@ public class CategoryActivity extends AppCompatActivity implements CategoryContr
         mRecCategory.setAdapter(mAdapter);
     }
     private void loadData(){
+        mCatPresenter = new CategoryPreImp(this);
         mCatPresenter.getCategoryList(CategoryRepository.getInstance());
     }
 }

@@ -1,4 +1,4 @@
-package com.example.ma.demomvp.data.source.Categories;
+package com.example.ma.demomvp.data.source;
 
 
 import com.example.ma.demomvp.data.model.Category;
