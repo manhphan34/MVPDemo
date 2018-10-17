@@ -9,13 +9,14 @@
         android:id="@+id/edit_user_name"
         android:layout_width="@dimen/dimen_0dp"
         android:layout_height="wrap_content"
+        android:autofillHints="@string/login_user_name_hint"
+        android:hint="@string/login_user_name_hint"
         android:inputType="textPersonName"
         android:text="@string/login_user_name_hint"
-        android:hint="@string/login_user_name_hint"
-        android:autofillHints="@string/login_user_name_hint"
         app:layout_constraintBottom_toTopOf="@+id/edit_pass_word"
         app:layout_constraintEnd_toStartOf="@+id/guide_line_right"
-        app:layout_constraintStart_toStartOf="@+id/guide_line_right"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_left"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="packed"
         tools:ignore="UnusedAttribute" />
@@ -24,15 +25,16 @@
         android:id="@+id/edit_pass_word"
         android:layout_width="@dimen/dimen_0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_marginTop="8dp"
+        android:autofillHints="@string/login_pass_word_hint"
+        android:hint="@string/login_pass_word_hint"
         android:inputType="text"
         android:maxLines="@integer/number_1"
         android:text="@string/login_pass_word_hint"
-        android:hint="@string/login_pass_word_hint"
-        android:autofillHints="@string/login_pass_word_hint"
         app:layout_constraintBottom_toTopOf="@+id/button_login"
         app:layout_constraintEnd_toStartOf="@+id/guide_line_right"
-        app:layout_constraintStart_toStartOf="@+id/guide_line_right"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_left"
         app:layout_constraintTop_toBottomOf="@+id/edit_user_name"
         tools:ignore="UnusedAttribute" />
 
@@ -40,13 +42,12 @@
         android:id="@+id/button_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_8dp"
-        android:layout_marginBottom="@dimen/dimen_8dp"
         android:maxLines="@integer/number_1"
         android:text="@string/title_logind_button"
         app:layout_constraintBottom_toTopOf="@+id/progress_main"
         app:layout_constraintEnd_toStartOf="@+id/guide_line_right"
-        app:layout_constraintStart_toStartOf="@+id/guide_line_right"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_left"
         app:layout_constraintTop_toBottomOf="@+id/edit_pass_word" />
 
     <ProgressBar
@@ -54,10 +55,11 @@
         style="?android:attr/progressBarStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guide_line_right"
-        app:layout_constraintStart_toStartOf="@+id/guide_line_right"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/guide_line_left"
         app:layout_constraintTop_toBottomOf="@+id/button_login" />
 
     <android.support.constraint.Guideline
